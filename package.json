@@ -1,0 +1,21 @@
+{
+  "name": "solari-pricewatch",
+  "version": "1.0.0",
+  "description": "Competitive price monitoring agent built on Solari cloud browsers + sandboxes",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "watch": "tsx src/index.ts --watch"
+  },
+  "dependencies": {
+    "@solarisdk/browser": "^1.0.0",
+    "@solarisdk/sdk": "^1.0.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0",
+    "@types/node": "^20.14.0"
+  }
+}

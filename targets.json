@@ -1,0 +1,9 @@
+[
+  {
+    "id": "example-product",
+    "label": "Example Product Co.",
+    "url": "https://example.com",
+    "priceSelector": "h1",
+    "note": "Placeholder target. `example.com` has no price, so this just proves the pipeline runs end to end. Swap in real competitor product pages and CSS selectors that point at the price element."
+  }
+]
