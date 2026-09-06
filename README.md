@@ -1,9 +1,7 @@
 # PriceWatch
-
 A competitive price-monitoring agent built on [Solari](https://getsolari.com).
 
 Give it a list of product URLs. Each run it:
-
 1. **Scrapes** current prices *and a screenshot* of each target with a
    **Solari cloud browser** (`@solarisdk/browser`) — optionally through
    stealth + a residential proxy for sites that block datacenter traffic,
@@ -24,7 +22,6 @@ balance — a browser and a sandbox composed into one real, statistically
 literate pipeline instead of two disconnected quickstarts.
 
 ## Why a sandbox for arithmetic?
-
 The z-score itself is simple enough to do in plain TypeScript. It's done in a
 Solari sandbox instead because that's where this kind of pipeline actually
 goes next — a real pandas-based outlier model, currency normalization,
@@ -36,7 +33,6 @@ first, with matplotlib pip-installed on the fly since the `base` template
 doesn't ship with it preinstalled.
 
 ## Setup
-
 ```bash
 npm install
 cp .env.example .env
@@ -44,7 +40,6 @@ cp .env.example .env
 ```
 
 Edit `targets.json` with the product pages you actually want to watch:
-
 ```json
 {
   "id": "competitor-a-widget",
@@ -58,7 +53,6 @@ Edit `targets.json` with the product pages you actually want to watch:
 needs to resolve to the element whose text contains the price.
 
 ## Run
-
 ```bash
 npm start
 ```
@@ -109,7 +103,6 @@ rather than crashing the process.
 | `PRICEWATCH_RECORD` | optional, `true` to record the browser session (download the rrweb replay via `solari.sessions.downloadReplay(sessionId)`) |
 
 ## Project layout
-
 ```
 src/
   scrape.ts      Solari cloud browser: visit targets, capture price + screenshot
@@ -123,7 +116,6 @@ targets.json     the products being watched
 ```
 
 ## Extending this
-
 - Swap the console report for an email or Slack webhook when something's
   flagged (`deltas.filter(d => d.flagged)` in `index.ts` is the hook point).
 - Add `profileId` to the browser launch options in `scrape.ts` for pricing
@@ -135,7 +127,3 @@ targets.json     the products being watched
 - Publish `dashboard.html` somewhere with `sandbox.previewUrl()` (see the
   cookbook's `sandbox-port-preview-ts` example) instead of just writing it
   to disk, for a live-updating public URL.
-
----
-
-Built from the [Solari Cookbook](https://github.com/solari-sdk/solari-cookbook).
